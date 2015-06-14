@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.armando.project.MainActivity"
+    android:id="@+id/mainLayout"
+    android:padding="20dp"
+    android:background="@drawable/background"
+    android:transitionGroup="false"
+    android:nestedScrollingEnabled="false">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/playBtn"
+        android:text="@string/play"
+        android:background="#111"
+        android:textColor="#cdffff"
+        android:textSize="20sp"
+        android:layout_below="@+id/logoView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:clickable="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/highScoresBtn"
+        android:text="@string/high_scores"
+        android:textColor="#cdffff"
+        android:background="#111"
+        android:textSize="20sp"
+        android:layout_below="@+id/playBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:clickable="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settingsBtn"
+        android:background="#111"
+        android:text="@string/settings"
+        android:textColor="#cdffff"
+        android:textSize="20sp"
+        android:layout_below="@+id/highScoresBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:clickable="true" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/logoView"
+        android:src="@mipmap/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/logo_content_description" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        android:id="@+id/exitBtn"
+        android:textColor="#cdffff"
+        android:background="#111"
+        android:textSize="20sp"
+        android:layout_below="@+id/settingsBtn"
+        android:layout_alignLeft="@+id/settingsBtn"
+        android:layout_alignStart="@+id/settingsBtn"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentStart="true"
+        android:clickable="true" />
+
+</RelativeLayout>

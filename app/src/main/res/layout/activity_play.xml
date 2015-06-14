@@ -1,0 +1,257 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.armando.project.PlayActivity"
+    android:background="#c32F2F"
+    android:padding="1sp"
+    android:id="@+id/mainLayout">
+
+    <Button
+        style="@style/button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/hit"
+        android:id="@+id/btnHit"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_above="@+id/btnDoubleDown"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone" />
+
+    <Button
+        style="@style/button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/stand"
+        android:id="@+id/btnStand"
+        android:layout_alignTop="@+id/btnHit"
+        android:layout_toRightOf="@+id/btnHit"
+        android:layout_toEndOf="@+id/btnHit"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone" />
+
+    <Button
+        style="@style/button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/split"
+        android:id="@+id/btnSplit"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@+id/btnStand"
+        android:layout_alignTop="@+id/btnStand"
+        android:visibility="gone" />
+
+    <Button
+        style="@style/button"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:text="@string/double_down"
+        android:id="@+id/btnDoubleDown"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
+
+    <Button
+        style="@style/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/surrender"
+        android:id="@+id/btnSurrender"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@+id/btnDoubleDown"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:layout_width="66dp"
+        android:layout_height="99dp"
+        android:id="@+id/dealerCardImg1"
+        android:src="@drawable/placeholder"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="60dp" />
+
+    <ImageView
+        android:layout_width="66dp"
+        android:layout_height="99dp"
+        android:id="@+id/dealerCardImg2"
+        android:src="@drawable/placeholder"
+        android:layout_alignBottom="@+id/dealerCardImg1"
+        android:layout_toRightOf="@+id/dealerCardImg1"
+        android:layout_toEndOf="@+id/dealerCardImg1"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bet: $"
+        android:id="@+id/betLabel"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="160dp"
+        android:textSize="25sp"
+        android:textColor="#fff"
+        android:layout_marginLeft="125dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        android:id="@+id/betNumberText"
+        android:layout_toRightOf="@+id/betLabel"
+        android:layout_alignBottom="@+id/betLabel"
+        android:layout_marginLeft="5dp"
+        android:textColor="#fff"
+        android:textSize="25sp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/decreaseBetBtn"
+        android:src="@drawable/previous_button"
+        android:background="#c32F2F"
+        android:layout_marginBottom="-10dp"
+        android:layout_alignBottom="@+id/betLabel"
+        android:layout_toLeftOf="@+id/betLabel"
+        android:layout_marginRight="-110dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/increaseBetBtn"
+        android:src="@drawable/next_button"
+        android:background="#c32F2F"
+        android:layout_alignBottom="@+id/betNumberText"
+        android:layout_toRightOf="@+id/betNumberText"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="-10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Balance: $"
+        android:id="@+id/balanceLabel"
+        android:layout_alignParentTop="true"
+        android:textColor="#fff"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="1000"
+        android:id="@+id/balanceNumberTextView"
+        android:textColor="#fff"
+        android:layout_toRightOf="@+id/balanceLabel"
+        android:layout_alignBottom="@+id/balanceLabel"
+        android:layout_marginLeft="3dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="0"
+        android:id="@+id/highScoreNumberTextView"
+        android:textColor="#fff"
+        android:layout_toStartOf="@+id/btnSplit"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="High-Score: $"
+        android:id="@+id/highScoreLabel"
+        android:textColor="#fff"
+        android:layout_alignBottom="@+id/highScoreNumberTextView"
+        android:layout_toLeftOf="@+id/highScoreNumberTextView"
+        android:layout_marginRight="3dp"
+        android:textIsSelectable="false"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:layout_width="66dp"
+        android:layout_height="99dp"
+        android:id="@+id/playerCardImg1"
+        android:src="@drawable/placeholder"
+        android:layout_marginTop="235dp"
+        android:layout_marginLeft="100dp" />
+
+    <ImageView
+        android:layout_width="66dp"
+        android:layout_height="99dp"
+        android:id="@+id/playerCardImg2"
+        android:src="@drawable/placeholder"
+        android:layout_toRightOf="@+id/playerCardImg1"
+        android:layout_alignBottom="@+id/playerCardImg1"
+        android:layout_marginLeft="10dp" />
+
+    <Button
+        style="@style/button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/place_bet"
+        android:id="@+id/placeBetButton"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="52dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="125dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="You:"
+        android:id="@+id/textView"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignLeft="@+id/playerCardImg1"
+        android:layout_alignBottom="@+id/playerCardImg1"
+        android:layout_marginBottom="99dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Dealer:"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/dealerCardImg1"
+        android:layout_toLeftOf="@+id/highScoreNumberTextView"
+        android:layout_alignLeft="@+id/dealerCardImg1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/dealerCardImg2"
+        android:layout_alignRight="@+id/dealerCardImg2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0"
+        android:id="@+id/textView4"
+        android:layout_alignRight="@+id/playerCardImg2"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_above="@+id/playerCardImg2" />
+
+</RelativeLayout>
