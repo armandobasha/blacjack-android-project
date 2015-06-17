@@ -13,10 +13,10 @@
         android:text="@string/hit"
         android:id="@+id/btnHit"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="15dp"
-        android:layout_above="@+id/btnDoubleDown"
-        android:layout_marginBottom="10dp"
-        android:visibility="gone" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="50dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true" />
 
     <Button
         style="@style/button"
@@ -27,33 +27,7 @@
         android:layout_alignTop="@+id/btnHit"
         android:layout_toRightOf="@+id/btnHit"
         android:layout_toEndOf="@+id/btnHit"
-        android:layout_marginLeft="10dp"
-        android:visibility="gone" />
-
-    <Button
-        style="@style/button"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="@string/split"
-        android:id="@+id/btnSplit"
-        android:layout_marginLeft="10dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="10dp"
-        android:layout_toRightOf="@+id/btnStand"
-        android:layout_alignTop="@+id/btnStand"
-        android:visibility="gone" />
-
-    <Button
-        style="@style/button"
-        android:layout_width="155dp"
-        android:layout_height="wrap_content"
-        android:text="@string/double_down"
-        android:id="@+id/btnDoubleDown"
-        android:layout_alignParentLeft="true"
         android:layout_marginLeft="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
         android:visibility="gone" />
 
     <Button
@@ -64,10 +38,9 @@
         android:id="@+id/btnSurrender"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="20dp"
-        android:layout_toRightOf="@+id/btnDoubleDown"
-        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="15dp"
         android:visibility="gone" />
 
     <ImageView
@@ -165,7 +138,6 @@
         android:text="0"
         android:id="@+id/highScoreNumberTextView"
         android:textColor="#fff"
-        android:layout_toStartOf="@+id/btnSplit"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="10dp"
@@ -211,7 +183,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="52dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="125dp" />
+        android:layout_marginLeft="125dp"
+        android:visibility="visible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -232,7 +205,6 @@
         android:text="Dealer:"
         android:id="@+id/textView2"
         android:layout_below="@+id/dealerCardImg1"
-        android:layout_toLeftOf="@+id/highScoreNumberTextView"
         android:layout_alignLeft="@+id/dealerCardImg1" />
 
     <TextView

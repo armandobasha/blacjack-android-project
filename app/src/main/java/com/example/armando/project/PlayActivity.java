@@ -43,9 +43,8 @@ public class PlayActivity extends Activity {
 
         final Button hitButton = (Button) findViewById(R.id.btnHit);
         final Button standButton = (Button) findViewById(R.id.btnStand);
-        final Button splitButton = (Button) findViewById(R.id.btnSplit);
-        final Button doubleDownButton = (Button) findViewById(R.id.btnDoubleDown);
         final Button surrenderButton = (Button) findViewById(R.id.btnSurrender);
+
         final Button placeBetButton = (Button) findViewById(R.id.placeBetButton);
 
         new getNewDeckTask().execute();
@@ -62,19 +61,13 @@ public class PlayActivity extends Activity {
                 else if(v == placeBetButton){
                     hitButton.setVisibility(View.VISIBLE);
                     standButton.setVisibility(View.VISIBLE);
-                    splitButton.setVisibility(View.VISIBLE);
-                    doubleDownButton.setVisibility(View.VISIBLE);
                     surrenderButton.setVisibility(View.VISIBLE);
 
                     placeBetButton.setVisibility(View.GONE);
                     decreaseBetButton.setVisibility(View.GONE);
                     increaseBetButton.setVisibility(View.GONE);
 
-                    TextView betNumber = (TextView) findViewById(R.id.betNumberText);
-                    bet = Integer.parseInt(betNumber.getText().toString());
-                    balance = balance - bet;
-                    TextView balanceTextView = (TextView) findViewById(R.id.balanceNumberTextView);
-                    balanceTextView.setText(""+balance);
+                    placeBet();
                 }
             }
         };
@@ -119,6 +112,14 @@ public class PlayActivity extends Activity {
             bet = bet - amount;
             betNumber.setText("" + bet);
         }
+    }
+
+    public void placeBet(){
+        TextView betNumber = (TextView) findViewById(R.id.betNumberText);
+        bet = Integer.parseInt(betNumber.getText().toString());
+        balance = balance - bet;
+        TextView balanceTextView = (TextView) findViewById(R.id.balanceNumberTextView);
+        balanceTextView.setText(""+balance);
     }
 
     private class getNewDeckTask extends AsyncTask<Void, Void, List<Object>> {
