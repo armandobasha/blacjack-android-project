@@ -71,7 +71,7 @@
         android:layout_marginBottom="160dp"
         android:textSize="25sp"
         android:textColor="#fff"
-        android:layout_marginLeft="125dp" />
+        android:layout_marginLeft="120dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -93,7 +93,7 @@
         android:layout_marginBottom="-10dp"
         android:layout_alignBottom="@+id/betLabel"
         android:layout_toLeftOf="@+id/betLabel"
-        android:layout_marginRight="-110dp" />
+        android:layout_marginRight="-100dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
         android:background="#c32F2F"
         android:layout_alignBottom="@+id/betNumberText"
         android:layout_toRightOf="@+id/betNumberText"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginBottom="-10dp" />
 
     <TextView

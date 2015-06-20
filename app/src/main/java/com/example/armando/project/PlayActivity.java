@@ -101,8 +101,12 @@ public class PlayActivity extends Activity {
     public void increaseBet(int amount){
         TextView betNumber = (TextView) findViewById(R.id.betNumberText);
         int bet = Integer.parseInt(betNumber.getText().toString());
-        bet = bet + amount;
-        betNumber.setText(""+bet);
+        if(bet < balance)
+        {
+            bet = bet + amount;
+            betNumber.setText(""+bet);
+        }
+
     }
 
     public void decreaseBet(int amount){
@@ -116,18 +120,21 @@ public class PlayActivity extends Activity {
 
     public void placeBet(){
         TextView betNumber = (TextView) findViewById(R.id.betNumberText);
-        bet = Integer.parseInt(betNumber.getText().toString());
-        balance = balance - bet;
+        int bet = Integer.parseInt(betNumber.getText().toString());
+        if(balance >= bet){
+            this.bet = bet;
+            balance = balance - this.bet;
+        }
         TextView balanceTextView = (TextView) findViewById(R.id.balanceNumberTextView);
         balanceTextView.setText(""+balance);
     }
 
-    private class getNewDeckTask extends AsyncTask<Void, Void, List<Object>> {
+    private class getNewDeckTask extends AsyncTask<Void, Void, String> {
         private static final String URL = "http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6";
         AndroidHttpClient client = AndroidHttpClient.newInstance("");
 
         @Override
-        protected List<Object> doInBackground(Void... params) {
+        protected String doInBackground(Void... params) {
             HttpGet request = new HttpGet(URL);
             JSONResponseHandler responseHandler = new JSONResponseHandler();
             try {
@@ -141,38 +148,37 @@ public class PlayActivity extends Activity {
         }
 
         @Override
-        protected void onPostExecute(List<Object> result) {
+        protected void onPostExecute(String result) {
             if (null != client) {
                 client.close();
             }
-            deck_id = (String) result.get(0);
-            remaining_cards = (int) result.get(1);
+            deck_id = (String) result;
             Log.d("Deck ID", deck_id);
-            Log.d("Remaining cards", ""+remaining_cards);
         }
 
     }
 
-    private class JSONResponseHandler implements ResponseHandler<List<Object>>{
+    private class JSONResponseHandler implements ResponseHandler<String>{
 
         @Override
-        public List<Object> handleResponse(HttpResponse response) throws ClientProtocolException, IOException{
-            List<Object> result = new ArrayList<>();
+        public String handleResponse(HttpResponse response) throws ClientProtocolException, IOException{
+            String result;
             String JSONResponse = new BasicResponseHandler().handleResponse(response);
 
             try {
                 JSONObject responseObject = (JSONObject) new JSONTokener(JSONResponse).nextValue();
                 if(responseObject.getBoolean("success")){
                     Log.d("Create deck:", "success = true");
-                    result.add(0, responseObject.getString("deck_id"));
-                    result.add(1, responseObject.getInt("remaining"));
+                    result =  responseObject.getString("deck_id");
+                    Log.d("Deck ID", result);
+                    return result;
                 }
             }
             catch (JSONException e)
             {
                 e.printStackTrace();
             }
-            return result;
+            return "";
         }
     }
 }
